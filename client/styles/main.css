@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+/*********************************************************************************/
+/***************************************CSS***************************************/
+/*********************************************************************************/
+
+html {
+    overflow-x: hidden;
+}
+body {
+    margin: 0;
+    display: block;
+}
+header {
+    /*the grey line top*/
+    
+    background-color: #353744;
+    width: 100%;
+    height: 113px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: inline-block;
+}
+header img {
+    margin-top: 17px;
+    margin-left: 20px;
+    display: inline-block;
+}
+nav {
+    /*the green part*/
+    
+    background: #61d290;
+    width: 0;
+    height: 0;
+    display: inline-block;
+}
+h1 {
+    font-family: Nunito;
+    /*the big VEGANS word in the begining*/
+    
+    margin: 0;
+    top: 120px;
+    position: absolute;
+    left: 20px;
+}
+/*********************************************************************************/
+/**********************MOBILE FIRST --> THIS IS FOR DESKTOP***********************/
+/*********************************************************************************/
+
+@media only screen and (min-width: 638px) {
+    nav {
+        width: 250px;
+        height: calc(100% - 114px);
+    }
+    main.main_allmesages {
+        margin-left: 260;
+        min-width: calc(100% - 270px);
+    }
+    footer.thewhite {
+        position: fixed;
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+    h1.bigvegan {
+        position: absolute;
+        left: 280px;
+        top: 120px;
+    }
+    li {
+        min-width: 700px;
+    }
+    div.messagebox {
+        max-width: 600px;
+    }
+    p.thetext {
+        max-width: 600px;
+    }
+    textarea.NewMsg {
+        width: 90%;
+    }
+    div.modalconent {
+        width: 400px;
+        height: 160px;
+    }
+    button.button1 {
+        position: relative;
+        top: 20px;
+        left: 190px;
+    }
+    button.button2 {
+        position: relative;
+        top: 20px;
+        left: 200px;
+    }
+    div.FullName {
+        margin-bottom: 0;
+        /*might cause problems!*/
+    }
+    input.uFullName {
+        float: right;
+    }
+    .Email input {
+        float: right;
+    }
+}
+/*********************************************************************************************/
+/**************************************THE SEND FORM******************************************/
+/*********************************************************************************************/
+
+form textarea {
+    resize: none;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 9px;
+    border: 0;
+    height: 76px;
+    outline: none;
+    display: inline-block;
+    z-index: 100;
+    max-height: 300px;
+    overflow: hidden;
+    min-height: 80px;
+    width: 80%;
+}
+.arrow {
+    /*the send buttom*/
+    
+    position: absolute;
+    bottom: 20%;
+    right: 3%;
+    display: inline-block;
+    z-index: 500;
+    padding: 0;
+    border: none;
+}
+.arrow:focus {
+    outline: 0;
+}
+.arrow img {
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: white;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+.thewhite {
+    border-top-width: 1px;
+    border-top: solid;
+    border-color: #d7d7d7;
+    height: 80px;
+    background-color: white;
+    bottom: 0;
+    display: inline-block;
+    max-height: 300px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+html {
+    display: inline-block;
+}
+body {
+    margin: 0;
+    background-color: #F6F6F6;
+    font-family: Nunito;
+}
+.VeganLine {
+    display: inline-block
+}
+/*********************************************************************************************/
+/****************************THE LITTLE PEOPLE ON THE LEFT************************************/
+/*********************************************************************************************/
+
+dl {
+    display: inline-flex;
+    padding: 0.5em;
+    position: fixed;
+    right: 20px;
+    top: 90px;
+    font-weight: bold;
+}
+dt {
+    float: left;
+    clear: left;
+    text-align: right;
+    margin-left: 6px;
+    margin-top: 21px;
+}
+dd {
+    margin: 2px;
+}
+/*************************************************************************/
+/*************************** The SCROLL-BAR ******************************/
+/*************************************************************************/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #EBEDEC;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: lightgrey;
+}
+/*************************************************************************/
+/*****************************THE MESSAGES********************************/
+/*************************************************************************/
+
+.main_allmesages {
+    padding-left: 10px;
+    margin-top: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 120px;
+    overflow-y: auto;
+    max-height: calc(100% - 260px);
+    margin-left: 0;
+    min-width: 500px;
+    width: -webkit-fill-available;
+    overflow-x: hidden;
+}
+ol {
+    padding: 0;
+}
+.messagebox p {
+    max-height: none;
+    max-width: 300px;
+}
+li {
+    padding: 7px;
+    display: block;
+    list-style-type: none;
+    margin: 1px;
+    min-width: 300px;
+    min-width: calc(100% - 360px);
+    overflow-x: hidden;
+}
+.personimg {
+    float: left;
+    float: top;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.messagebox {
+    position: relative;
+    left: 1%;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E6E6E6;
+    background-color: white;
+    font-family: Nunito;
+    width: fit-content;
+    word-wrap: break-word;
+    max-width: 300px;
+}
+.thetext {
+    max-width: 300px;
+}
+.name {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+    border: 0;
+    font-style: normal;
+}
+.time {
+    color: grey;
+    display: inline-block;
+    margin: 0;
+    padding-left: 8px;
+    border: 0;
+}
+.thetext {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #616161;
+}
+.messagebox:hover {
+    background-color: #EBEDEC;
+}
+.delete {
+    border: none;
+    background-color: #EBEDEC;
+    ;
+    font-weight: bold;
+    font-size: 14;
+    color: #36373C;
+    visibility: hidden;
+    float: right;
+}
+.delete:focus {
+    outline: 0;
+}
+div:hover .delete {
+    visibility: visible;
+}
+/*************************************************************************/
+/****************************** THE LOGIN ********************************/
+/*************************************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+}
+.modalconent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    background-color: #F9F9F9;
+    width: 80%;
+    height: 80%;
+}
+.WhoAreYou {
+    margin: 0;
+    font-size: 22;
+    position: relative;
+    top: 4px;
+    left: 1px;
+}
+.button1 {
+    font-family: Nunito;
+    border: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: relative;
+    top: 300px;
+    left: 120px;
+    /*check it!!!!!*/
+}
+.button2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    background-color: #69C55D;
+    border: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Nunito;
+    position: relative;
+    top: 300px;
+    left: 130px;
+}
+.FullName {
+    padding-top: 15px;
+    color: darkslategrey;
+}
+.FullName input {
+    margin-left: 0px;
+    width: 300px;
+    font-weight: bold;
+    border: 0.5px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    height: 25px;
+    outline: none;
+    padding: 8px;
+    display: block;
+}
+.Email {
+    padding-top: 10px;
+    color: darkslategrey;
+    display: block;
+}
+.Email input {
+    width: 300px;
+    font-weight: bold;
+    border: 0.5px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+    height: 25px;
+    outline: none;
+    padding: 8px;
+    margin-left: 0;
+    display: block;
+}
+body {
+    font-family: Nunito;
+}
+/*************************************************************************/
+/************************** FINISH THE LOGIN *****************************/
+/*************************************************************************/

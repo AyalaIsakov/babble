@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+        <script src="scripts/main.js"></script>
+        <title> Vegans - Babble </title>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" alt="logo" height="80">
+        </header>
+        <div id="modal" class="modal">
+            <div class="modalconent">
+                <h1 class="WhoAreYou">Who are you?</h1>
+                <form>
+                    <div class="FullName">
+                    <label for="uFullName">Full name:
+                    <input class="uFullName" id="uFullName" type="text" name="firstname">
+                    </label>
+                    </div>
+                    <div class="Email">
+                    <label for="uEmail">Email:
+                    <input id="uEmail" type="text" name="lastname">
+                    </label>
+                    </div>
+                </form>
+                <button class="button1" id="button1">Stay Anonymous</button>
+                <button class="button2" id="button2">Save</button>
+            </div>
+        </div>
+        <nav></nav>
+        <aside>
+            <div class="VeganLine">   
+                <h1 class="bigvegan">Vegans</h1>
+            </div>
+            <dl>
+                <dt> <img src="images/chats.png" alt=""></dt>
+                    <dd><p id="chats">0</p></dd>
+                <dt> <img src="images/howmany.png" alt=""></dt>
+                    <dd><p id="howmany">0</p></dd>
+            </dl>
+        </aside>
+        <main class="main_allmesages">
+            <ol id="Allmessages" class="Allmessag"></ol>
+            <div id="ShowNew"></div>
+        </main> 
+        <footer class="thewhite" onkeyup="TheWholeFooterAdjust(this)" id="thewhite">   
+            <form>
+                <textarea class="NewMsg" id="NewMsg" name="message" onkeypress="enter_send()" onkeyup="textAreaAdjust(this)" style="overflow:hidden" placeholder="Type your message here..."  title="Msg"></textarea> 
+                <a href="#ShowNew" title="ShowNewMsgAlways"></a><button class="arrow" type="button" aria-label="SendButton"  onclick="send_the_msg()"> <img src="images/sendB.png" alt=""/> </button>
+            </form>
+        </footer> 
+    </body>
+</html>
