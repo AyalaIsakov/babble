@@ -33,6 +33,8 @@ nav {
     height: 0;
     display: inline-block;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 h1 {
     font-family: Nunito;
     /*the big VEGANS word in the begining*/
@@ -410,4 +412,4 @@ body {
 /************************** FINISH THE LOGIN *****************************/
 /*************************************************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+
