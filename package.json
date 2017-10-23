@@ -9,9 +9,18 @@
   "dependencies": {
     "express": "^4.16.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "concurrently": "^3.5.0",
+    "mocha": "^4.0.1",
+    "open": "0.0.5",
+    "open-browser": "^3.5.2",
+    "sinon": "^4.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "concurrently \"http-server -p 8081 -o test\\client\\index.html\" \"mocha test/server/test.js\"",
+    "start": "concurrently \"http-server -p 8081 -o http://127.0.0.1:9000\" \"node server/main.js\""
   },
   "repository": {
     "type": "git",

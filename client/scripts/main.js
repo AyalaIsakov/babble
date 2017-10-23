@@ -15,21 +15,21 @@ var Babble = {
     },
     postMessage: function(message, callback){
         $.ajax({ 
-            url: '/send/' + message + '|||||' + Babble.user_name + '|||||' + Babble.user_email,
+            url: 'http://localhost:9000/send/' + message + '|||||' + Babble.user_name + '|||||' + Babble.user_email,
             dataType: "json",
             success: callback
         });
     },
     getStats: function(callback){
         $.ajax({ 
-            url: '/stats',
+            url: 'http://localhost:9000/stats',
             dataType: "json",
             success: callback
         });
     },
     deleteMessage: function(id, callback){
         $.ajax({ 
-            url: '/delete/' + id,
+            url: 'http://localhost:9000/delete/' + id,
             dataType: "json",
             success: callback
         });
@@ -395,8 +395,9 @@ function md5 ( str ) {
 
 var poll = function(){
     $.ajax({ 
-        url: '/poll/' + Babble.current_message,
+        url: 'http://localhost:9000/poll/' + Babble.current_message,
         success: function(response){
+            console.log('log succed!');
             if (response != null) {
                 Babble.current_message += 1;
                 add_message(response.message, response.sender, response.sender_mail);
@@ -409,4 +410,5 @@ var poll = function(){
     });
 }
 
+console.log('hey');
 Babble.getMessages(0, function(){});

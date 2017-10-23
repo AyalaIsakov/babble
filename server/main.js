@@ -12,7 +12,9 @@ var messages = new mu.Messages();
 var users = 0;
 var clients = [];
 
-http.createServer(function (request, response) {
+
+var server = http.createServer();
+server.on('request', function (request, response) {
     var filePath = request.url;
     if (filePath == '/'){
         filePath = 'index.html';
@@ -49,11 +51,10 @@ http.createServer(function (request, response) {
             contentType = 'image/jpg';
             break;
     }
-    fs.readFile('../client/' + filePath, function(error, content) {
+    fs.readFile('./client/' + filePath, function(error, content) {
         if (error) {
             if(error.code == 'ENOENT'){
                 fs.readFile('./404.html', function(error, content) {
-                    response.writeHead(200, { 'Content-Type': contentType });
                     response.end(content, 'utf-8');
                 });
             }
@@ -69,29 +70,27 @@ http.createServer(function (request, response) {
         }
     });
 
-}).listen(8080);
+});
+
+server.listen(9000);
 
 // Console will print the message
-console.log('Server running at http://127.0.0.1:8080/');
+console.log('start');
+console.log('Server running at http://127.0.0.1:9000/');
 
 
 function recieveMessage(res, reqPath){
     var msg_parts = unescape(reqPath.substr(6)).split('|||||');
     var msg = new m.Message(msg_parts[0], msg_parts[1], msg_parts[2]);
     messages.addMessage(msg);
-    while(clients.length > 0) {
-        var client = clients.pop();
-        client.end(JSON.stringify( {
-            count: messages.amount(),
-            message: msg.content,
-            sender: msg.sender,
-            sender_mail: msg.mail
-        }));
-    }
-    res.end();
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", 'GET, POST, DELETE, OPTIONS');
+    return res.end();
 }
 
 function poll(res, reqPath){
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", 'GET, POST, DELETE, OPTIONS');
     var msg_number = Number(reqPath.replace(/[^0-9]*/, ''));
     if(messages.amount() > msg_number) {
         var msg = messages.getMessages()[msg_number];
@@ -110,6 +109,7 @@ function poll(res, reqPath){
 
 function updateStats(res){
     users += 1;
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.end(JSON.stringify({
         counter: String(users)
     }));
