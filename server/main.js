@@ -72,11 +72,12 @@ server.on('request', function (request, response) {
 
 });
 
-server.listen(9000);
+server.listen(8080
+);
 
 // Console will print the message
 console.log('start');
-console.log('Server running at http://127.0.0.1:9000/');
+console.log('Server running at http://127.0.0.1:8080/');
 
 
 function recieveMessage(res, reqPath){

@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "concurrently \"http-server -p 8081 -o test\\client\\index.html\" \"mocha test/server/test.js\"",
-    "start": "concurrently \"http-server -p 8081 -o http://127.0.0.1:9000\" \"node server/main.js\""
+    "start": "concurrently \"http-server -p 8081 -o http://127.0.0.1:8080\" \"node server/main.js\""
   },
   "repository": {
     "type": "git",
